@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+	.container_fulid{
+		background: #000 none repeat scroll 0 0;
+	    height: 60px;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: 99999;
+	    color:white;
+	    font-size: 20px;
+	    line-height: center;
+	}
+	.fr{
+		float: right;
+	}
+	.mr10{
+		margin-right: 10px;
+		display:inline;
+	}
+	li.clearStyle{
+        list-style:none;
+      }
+      .xui_container{
+      	width:1200px;
+      	min-height:0;
+      	margin: 0 auto;
+      }
+      .xui_sidenav{
+      	width:200px;
+      	float:left;
+      	border-right:1px solid silver;
+      	background:#EBECED;
+      	height: 100%;
+      }
+      .nav{
+      	height: 30px;
+		padding-left: 10px;
+		margin-top: 10px;
+		font-size: 16px;
+		/*color:#5C95D8;*/
+      }
+     .nav > li > a:focus, .nav > li > a:hover {
+	    text-decoration: none;
+	    background-color: #F5F5F5;
+	}
+
+</style>
+<div id="header">
+	<nav class="navbar navbar-default">
+		<div class="container_fulid container">
+			<div class="mt10">
+				<span>Laurel's personal Zone&nbsp;|</span>
+				<span>WebZone</span>
+			</div>
+			<div class="fl" style="width: 1200px;">
+				<ul class="nav navbar-nav navbar-brand clearStyle" style="margin-left: 300px;margin-top: -30px;position: absolute;">
+					<li><a href="/weibo/index">首页</a></li>
+					<li><a href="">编程</a></li>
+					<li><a href="">读书</a></li>
+					<li><a href="">技术交流</a></li>
+					<li><a href="">生活</a></li>
+
+				</ul>
+			</div>
+			<div class="btn-group navbar-form navbar-right">
+				<button class="btn btn-default dropdown-toggle fr mr10" type="button" data-toggle="dropdown" style="margin-top: -32px;">我的空间
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" style="min-width: 96px;margin: 2px 24px 0;">
+					<li><a href="/account/logout/">退出</a></li>
+					<li><a href="">更新</a></li>
+				</ul>
+			</div>	
+		</div>		
+	</nav>
+</div>
+<div class="xui_container">
+	{% if second_navs %}
+		<div class="xui_sidenav">
+			<ul class="nav">{% for second_nav in second_navs %}
+					{% if second_nav %}
+						{% for nav in second_nav.navs%}
+						<li class="active"><a href="{{nav.url}}">{{nav.title}}</a></li>
+						{% endfor %}
+
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}	
+{% block content_panel %}{% endblock %}
+</div>
+{% endblock %}

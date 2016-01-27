@@ -1,0 +1,23 @@
+.cui-blog-input{
+	width:850px;
+	margin:10px;
+}
+.cui-container{
+	width:1000px;
+	margin:0 auto;
+	border:1px solid silver;
+	background:#EAF3FB;
+}
+.cui-blog-submit{
+	overflow:hidden;
+}
+.cui-blog-list{
+	width:950px;
+	border: 1px solid silver;
+	min-height: 50px;
+	margin:10px;
+}
+.cui-created_at{
+	font-size: 12px;
+	color:silver;
+}

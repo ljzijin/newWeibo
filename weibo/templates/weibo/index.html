@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/javascript" src="/static/lib/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/static/lib/underscore-1.7.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/bundle.js"></script>
+    <script type="text/babel">
+    
+      ReactDOM.render(
+        <WeiboList  blogs='{{blogs}}' total_count='{{total_count}}'/>,
+        document.getElementById('example')
+      );
+    </script>
+</body>
+</html>

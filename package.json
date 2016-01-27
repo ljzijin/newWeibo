@@ -1,0 +1,21 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "supervisor -i ./static,./build,./node_modules ./bin/www",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --port 3080",
+    "build": "webpack --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljzijin/WebZone.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ljzijin/WebZone/issues"
+  },
+  "homepage": "https://github.com/ljzijin/WebZone#readme"
+}
